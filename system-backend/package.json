@@ -1,0 +1,17 @@
+{
+	"name": "system-backend",
+	"version": "1.0.0",
+	"description": "Backend do sistema de gerenciamento de estoque.",
+	"main": "index.js",
+	"author": "Mateus Henrique",
+	"license": "MIT",
+	"scripts": {
+		"dev": "nodemon src/index.ts",
+		"build": "sucrase ./src -d ./dist --transforms typescript,imports"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.19",
+		"sucrase": "^3.24.0",
+		"typescript": "^4.7.4"
+	}
+}

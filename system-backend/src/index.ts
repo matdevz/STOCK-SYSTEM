@@ -4,6 +4,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 
 import { productRouter } from './routes/productRouter';
+import { userRouter } from './routes/userRouter';
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/product', productRouter);
+app.use('/api/user', userRouter);
 
 mongoose.connect(`mongodb://${process.env.DATABASE_URL}`, (err) => {
 	err

@@ -1,6 +1,6 @@
 import Joi from '@hapi/joi';
 
-export const createProductValidate = (data) => {
+export const productValidate = (data) => {
 	const productSchema = Joi.object({
 		type: Joi.string().required(),
 		name: Joi.string().required(),

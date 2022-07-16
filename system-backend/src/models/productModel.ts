@@ -1,28 +1,26 @@
-import { Document, Schema, model } from 'mongoose';
-
-interface IProduct extends Document {
-	type: string;
-	name: string;
-	quantity: number;
-	price: number;
-}
+import { Schema, model } from 'mongoose';
+import { IProduct } from '../interfaces/IProduct';
 
 export const productSchema = new Schema<IProduct>(
 	{
-		type: {
+		name: {
 			type: String,
 			required: true,
 		},
-		name: {
-			type: String,
+		factoryPrice: {
+			type: Number,
+			required: true,
+		},
+		salePrice: {
+			type: Number,
 			required: true,
 		},
 		quantity: {
 			type: Number,
 			required: true,
 		},
-		price: {
-			type: Number,
+		dueDate: {
+			type: Date,
 			required: true,
 		},
 	},

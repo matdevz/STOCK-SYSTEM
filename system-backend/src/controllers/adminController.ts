@@ -13,4 +13,18 @@ export default {
       res.status(401).send({ error });
     }
   },
+  deleteUser: async (req: Request, res: Response) => {
+    const uid = req.params.id;
+    const user = await User.find({ _id: uid });
+
+    if (!uid) return res.status(401).send({ error: "Informe o uid" });
+    if (!user) return res.status(401).send({ error: "Usuário não encontrado" });
+
+    try {
+      await User.deleteOne({ _id: uid });
+      return res.status(200).send({ uid });
+    } catch (error) {
+      res.status(401).send({ error });
+    }
+  },
 };

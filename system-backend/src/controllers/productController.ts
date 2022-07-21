@@ -13,8 +13,7 @@ export default {
 
       res.status(200).send({ product });
     } catch (error) {
-      res.status(400);
-      console.log(error);
+      res.status(400).send({ error });
     }
   },
 
@@ -27,8 +26,7 @@ export default {
     try {
       res.status(200).json(data);
     } catch (error) {
-      res.status(400);
-      console.log(error);
+      res.status(400).send({ error });
     }
   },
   update: async (req: Request, res: Response): Promise<void> => {
@@ -43,8 +41,7 @@ export default {
     try {
       res.status(200).json({ id: productId });
     } catch (error) {
-      res.status(400);
-      console.log(error);
+      res.status(400).send({ error });
     }
   },
   delete: async (req: Request, res: Response): Promise<void> => {
@@ -56,8 +53,7 @@ export default {
     try {
       res.status(200).send({ id: productId });
     } catch (error) {
-      res.status(400);
-      console.log(error);
+      res.status(400).send({ error });
     }
   },
 };

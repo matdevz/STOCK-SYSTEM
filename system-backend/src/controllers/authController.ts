@@ -27,7 +27,6 @@ export const authAdmin = async (
   next: NextFunction
 ) => {
   const user = req.user;
-  console.log(user);
 
   if (!user.admin) return res.status(401).send({ error: "Acesso negado!" });
 

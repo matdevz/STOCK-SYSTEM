@@ -19,7 +19,9 @@ app.use("/api/user", userRouter);
 app.use("/api/product", productRouter);
 
 mongoose.connect(`mongodb://${process.env.DATABASE_URL}`, (err) => {
-  err ? console.log(`Houve um erro: ${err}`) : console.log("Mongodb Connected");
+    err
+        ? console.log(`Houve um erro: ${err}`)
+        : console.log("Mongodb Connected");
 });
 
 app.listen(process.env.PORT);
